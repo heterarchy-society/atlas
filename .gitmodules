@@ -1,0 +1,6 @@
+[submodule "datasets/glossary"]
+	path = datasets/glossary
+	url = git@github.com:heterarchy-society/glossary.git
+[submodule "datasets/books"]
+	path = datasets/books
+	url = git@github.com:heterarchy-society/books.git
