@@ -1,0 +1,24 @@
+name: Rebuild datasets when Atlas changes
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "datasets/**"
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ["books", "glossary"]
+
+    steps:
+      - name: Trigger dataset rebuild
+        run: |
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${{ secrets.DATASET_DISPATCH_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/heterarchy-society/${{ matrix.repo }}/dispatches \
+            -d '{"event_type":"atlas-updated","client_payload":{"atlas_sha":"${{ github.sha }}"}}'
