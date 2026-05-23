@@ -17,7 +17,7 @@ npm install @heterarchy/atlas
 ## Usage
 
 ```
-atlas <command>
+heterarchy-atlas <command>
 ```
 
 | Command | Description |
@@ -53,7 +53,7 @@ dir = "dist"   # default
 
 ## Build output
 
-`atlas build` writes one JS module per collection plus a combined JSON index:
+`heterarchy-atlas build` writes one JS module per collection plus a combined JSON index:
 
 ```
 dist/
@@ -77,7 +77,7 @@ export default {
 
 ## Translations
 
-`atlas translate` uses [Codex CLI](https://github.com/openai/codex) to translate glossary entries. Configuration lives in `config.toml`:
+`heterarchy-atlas translate` uses [Codex CLI](https://github.com/openai/codex) to translate glossary entries. Configuration lives in `config.toml`:
 
 ```toml
 [languages]
@@ -94,9 +94,9 @@ resume_prompt = "..."   # short prompt for subsequent terms
 Sessions are stored in `.translation-session-{lang}` (git-ignored) so terminology stays consistent across terms in the same run.
 
 ```sh
-atlas translate        # interactive — prompts for each stale/missing term
-atlas translate cs     # same, explicit language
-atlas translate cs tor # translate a single term non-interactively
+heterarchy-atlas translate        # interactive — prompts for each stale/missing term
+heterarchy-atlas translate cs     # same, explicit language
+heterarchy-atlas translate cs tor # translate a single term non-interactively
 ```
 
 ## Datasets
