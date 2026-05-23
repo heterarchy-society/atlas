@@ -4,3 +4,6 @@
 [submodule "datasets/books"]
 	path = datasets/books
 	url = git@github.com:heterarchy-society/books.git
+[submodule "datasets/writings"]
+	path = datasets/writings
+	url = git@github.com:heterarchy-society/writings.git
