@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Build tooling for Heterarchy data collections",
   "bin": {
-    "atlas": "./bin/atlas.js"
+    "heterarchy-atlas": "./bin/atlas.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",
