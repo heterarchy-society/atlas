@@ -43,7 +43,8 @@ switch (command) {
     await generatePeaks()
     break
   }
-  case 'transcript': {
+  case 'transcript':
+  case 'transcribe': {
     const { importTranscript } = await import(`${LIB}/transcript.js`)
     importTranscript()
     break
@@ -61,7 +62,8 @@ Commands:
   translate         Translate missing/stale entries via Codex CLI
   resolve-authors   Resolve GitHub usernames from git emails
   peaks <id>              Generate waveform peaks for a writing's audio
-  transcript <id> <file>  Import AssemblyAI word timestamps from JSON file
+  transcript <id> <file>  Import AssemblyAI or ElevenLabs word timestamps from JSON file
+  transcribe <id> <file>  Alias for transcript
 `)
     if (command && command !== '--help' && command !== 'help') {
       console.error(`Unknown command: ${command}`)
