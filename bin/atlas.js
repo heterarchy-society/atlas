@@ -38,6 +38,11 @@ switch (command) {
     await import(`${LIB}/resolve-authors.js`)
     break
   }
+  case 'peaks': {
+    const { generatePeaks } = await import(`${LIB}/peaks.js`)
+    await generatePeaks()
+    break
+  }
   default:
     console.log(`Atlas — build tooling for Heterarchy data collections
 
@@ -50,6 +55,7 @@ Commands:
   stale             Show translations with outdated source hash
   translate         Translate missing/stale entries via Codex CLI
   resolve-authors   Resolve GitHub usernames from git emails
+  peaks <id>        Generate waveform peaks for a writing's audio
 `)
     if (command && command !== '--help' && command !== 'help') {
       console.error(`Unknown command: ${command}`)
