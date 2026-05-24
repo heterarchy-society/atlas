@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ["books", "glossary"]
+        repo: ["books", "glossary", "writings"]
 
     steps:
       - name: Trigger dataset rebuild
