@@ -43,6 +43,11 @@ switch (command) {
     await generatePeaks()
     break
   }
+  case 'transcript': {
+    const { importTranscript } = await import(`${LIB}/transcript.js`)
+    importTranscript()
+    break
+  }
   default:
     console.log(`Atlas — build tooling for Heterarchy data collections
 
@@ -55,7 +60,8 @@ Commands:
   stale             Show translations with outdated source hash
   translate         Translate missing/stale entries via Codex CLI
   resolve-authors   Resolve GitHub usernames from git emails
-  peaks <id>        Generate waveform peaks for a writing's audio
+  peaks <id>              Generate waveform peaks for a writing's audio
+  transcript <id> <file>  Import AssemblyAI word timestamps from JSON file
 `)
     if (command && command !== '--help' && command !== 'help') {
       console.error(`Unknown command: ${command}`)
