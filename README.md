@@ -103,3 +103,23 @@ heterarchy-atlas translate cs tor # translate a single term non-interactively
 
 - [`datasets/glossary`](datasets/glossary) — reference glossary for the parallel society
 - [`datasets/books`](datasets/books) — book recommendations
+- [`datasets/writings`](datasets/writings) — primary source texts
+
+## Adding a new dataset
+
+1. **Create the dataset repo** with a `config.toml`, `package.json`, `.github/workflows/deploy.yml`, and `.gitignore` — use an existing dataset as a template.
+
+2. **Add it as a submodule** in this repo:
+   ```sh
+   git submodule add git@github.com:heterarchy-society/<name>.git datasets/<name>
+   ```
+
+3. **Register it in the rebuild workflow** — add the repo name to the matrix in [`.github/workflows/rebuild-datasets.yml`](.github/workflows/rebuild-datasets.yml):
+   ```yaml
+   repo: ["books", "glossary", "writings", "<name>"]
+   ```
+   This ensures the dataset is rebuilt automatically whenever Atlas itself is updated.
+
+4. **Update `DATASET_DISPATCH_TOKEN`** — the token in [GitHub repository secrets](https://github.com/heterarchy-society/atlas/settings/secrets/actions) must have `contents: write` access to the new repo. Regenerate or update it at [github.com/settings/personal-access-tokens](https://github.com/settings/personal-access-tokens).
+
+5. **Update `WEB_DISPATCH_TOKEN`** in the new dataset repo's secrets — this token is used by the dataset's deploy workflow to trigger a website rebuild after each deploy. It needs `contents: write` access to the `heterarchy-society/heterarchy.fyi` repo.
