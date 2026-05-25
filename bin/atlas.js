@@ -15,7 +15,7 @@ switch (command) {
   }
   case 'validate': {
     const { validateAll } = await import(`${LIB}/validate.js`)
-    validateAll()
+    await validateAll()
     break
   }
   case 'unresolved': {
