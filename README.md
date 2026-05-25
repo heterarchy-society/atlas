@@ -63,6 +63,23 @@ dist/
 
 If `git_history = true`, a `dist/<output_key>-history.json` is also written with per-item commit history.
 
+### Redirects
+
+When an item id is renamed, record the old id in `redirects.yaml` at the dataset repo root:
+
+```yaml
+# redirects.yaml
+mario: mario-havel
+```
+
+Validation checks that targets exist, sources are not live ids, and there are no redirect chains. Build emits the map into `dist/index.json` under `meta.redirects` for the frontend.
+
+Optional path override in `config.toml`:
+
+```toml
+redirects = "redirects.yaml"
+```
+
 ## Atlas scripts hook
 
 Drop an `atlas-scripts.js` (or `.ts`) in the dataset root to transform items at build time:
