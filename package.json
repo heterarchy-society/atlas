@@ -11,6 +11,7 @@
     "ajv-formats": "^3.0.1",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
+    "sharp": "^0.34.5",
     "smol-toml": "^1.6.1"
   },
   "license": "MIT"
