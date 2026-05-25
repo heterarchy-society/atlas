@@ -104,6 +104,7 @@ heterarchy-atlas translate cs tor # translate a single term non-interactively
 - [`datasets/glossary`](datasets/glossary) — reference glossary for the parallel society
 - [`datasets/books`](datasets/books) — book recommendations
 - [`datasets/writings`](datasets/writings) — primary source texts
+- [`datasets/people`](datasets/people) — people and contributors referenced by the project
 
 ## Adding a new dataset
 

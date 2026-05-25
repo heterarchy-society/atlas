@@ -7,3 +7,6 @@
 [submodule "datasets/writings"]
 	path = datasets/writings
 	url = git@github.com:heterarchy-society/writings.git
+[submodule "datasets/datasets/people"]
+	path = datasets/people
+	url = git@github.com:heterarchy-society/people.git
