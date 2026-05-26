@@ -1,5 +1,5 @@
 {
-  "name": "@heterarchy/atlas",
+  "name": "@heterarchy-society/atlas",
   "version": "1.0.0",
   "type": "module",
   "description": "Build tooling for Heterarchy data collections",
@@ -16,6 +16,9 @@
     "js-yaml": "^4.1.0",
     "sharp": "^0.34.5",
     "smol-toml": "^1.6.1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT"
 }
