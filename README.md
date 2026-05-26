@@ -80,6 +80,21 @@ Optional path override in `config.toml`:
 redirects = "redirects.yaml"
 ```
 
+### Wiki links
+
+Markdown descriptions use `[[wiki links]]`. Atlas does not resolve or validate them at build time; the site frontend resolves targets against loaded datasets.
+
+| Syntax | Meaning |
+|--------|---------|
+| `[[bitcoin]]` | Glossary term `bitcoin` (default collection) |
+| `[[bit gold\|bitcoin]]` | Display text → glossary id |
+| `[[people:david-chaum]]` | Person `david-chaum` in the people dataset |
+| `[[David Chaum\|people:david-chaum]]` | Display text → person id |
+
+The prefix before `:` is the dataset collection name (`glossary`, `people`, `books`, `writings`), matching each repo’s `name` in `config.toml`. Without a prefix, links refer to the glossary.
+
+The `unresolved` command only checks glossary-to-glossary links within a single glossary dataset (legacy helper for authors).
+
 ## Atlas scripts hook
 
 Drop an `atlas-scripts.js` (or `.ts`) in the dataset root to transform items at build time:
