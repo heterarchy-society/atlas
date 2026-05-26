@@ -10,7 +10,7 @@ const command = process.argv[2]
 switch (command) {
   case 'build': {
     const { build } = await import(`${LIB}/build.js`)
-    build()
+    await build()
     break
   }
   case 'validate': {
