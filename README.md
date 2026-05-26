@@ -40,7 +40,10 @@ source_dir = "glossary"
 format     = "md"          # md | yaml | toml
 output_key = "terms"
 git_history = true         # emit per-item git history to dist/
+schema     = "term.json"   # optional — omit to skip item validation
 ```
+
+`heterarchy-atlas validate` only checks items when `schema` is set (path under `schema/`). Redirects in `redirects.yaml` are still validated. Without `schema`, the command skips item checks and exits successfully.
 
 Multiple collections use `[[collections]]` (array syntax).
 
@@ -88,8 +91,10 @@ Markdown descriptions use `[[wiki links]]`. Atlas does not resolve or validate t
 |--------|---------|
 | `[[bitcoin]]` | Glossary term `bitcoin` (default collection) |
 | `[[bit gold\|bitcoin]]` | Display text → glossary id |
-| `[[people:david-chaum]]` | Person `david-chaum` in the people dataset |
 | `[[David Chaum\|people:david-chaum]]` | Display text → person id |
+| `[[Bitcoin whitepaper\|writings:bitcoin-whitepaper]]` | Display text → writing id |
+
+Glossary-only links may omit the pipe (`[[bitcoin]]`). Cross-dataset links must keep the visible label on the left: `[[Wei Dai\|people:wei-dai]]`, not bare `[[people:wei-dai]]`.
 
 The prefix before `:` is the dataset collection name (`glossary`, `people`, `books`, `writings`), matching each repo’s `name` in `config.toml`. Without a prefix, links refer to the glossary.
 
