@@ -1,11 +1,22 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const LIB = join(__dirname, '..', 'lib')
+const ROOT = join(__dirname, '..')
+const LIB = join(ROOT, 'lib')
+
+function atlasVersion() {
+  return JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version
+}
 
 const command = process.argv[2]
+
+if (command === '--version' || command === '-v' || command === 'version') {
+  console.log(atlasVersion())
+  process.exit(0)
+}
 
 switch (command) {
   case 'build': {
@@ -54,6 +65,10 @@ switch (command) {
 
 Usage: atlas <command>
 
+Options:
+  -v, --version     Show Atlas version
+  -h, --help        Show this help
+
 Commands:
   build             Build dist/ from glossary sources
   validate          Validate all source files against schema
@@ -65,7 +80,7 @@ Commands:
   transcript <id> <file>  Import AssemblyAI or ElevenLabs word timestamps from JSON file
   transcribe <id> <file>  Alias for transcript
 `)
-    if (command && command !== '--help' && command !== 'help') {
+    if (command && command !== '--help' && command !== '-h' && command !== 'help') {
       console.error(`Unknown command: ${command}`)
       process.exitCode = 1
     }

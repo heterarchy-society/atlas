@@ -1,6 +1,6 @@
 {
   "name": "@heterarchy-society/atlas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Build tooling for Heterarchy data collections",
   "bin": {
