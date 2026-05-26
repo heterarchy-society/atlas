@@ -11,7 +11,7 @@ npm install
 Or use it as a dependency in a dataset repo:
 
 ```sh
-npm install @heterarchy/atlas
+npm install @heterarchy-society/atlas
 ```
 
 ## Usage
