@@ -20,7 +20,7 @@ switch (command) {
   }
   case 'unresolved': {
     const { showUnresolved } = await import(`${LIB}/unresolved.js`)
-    showUnresolved()
+    await showUnresolved()
     break
   }
   case 'stale': {

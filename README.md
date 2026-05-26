@@ -89,12 +89,12 @@ Markdown descriptions use `[[wiki links]]`. Atlas does not resolve or validate t
 
 | Syntax | Meaning |
 |--------|---------|
-| `[[bitcoin]]` | Glossary term `bitcoin` (default collection) |
-| `[[bit gold\|bitcoin]]` | Display text → glossary id |
+| `[[bitcoin]]` | Glossary term `bitcoin` (id and label are the same) |
+| `[[bitcoin\|bit gold]]` | Glossary id → visible label (MediaWiki order) |
 | `[Timothy C. May](people:timothy-c-may)` | Person profile (standard markdown link) |
 | `[Bitcoin whitepaper](writings:bitcoin-whitepaper)` | Writing in the writings dataset |
 
-Use `[[…]]` only for glossary terms. Cross-dataset links use markdown form `[label](collection:id)` — the part after `:` is the collection name from `config.toml` (`people`, `books`, `writings`) and the item id.
+Use `[[…]]` only for glossary terms, in **MediaWiki pipe order**: `[[target\|display]]` — left is the term id, right is what readers see. Cross-dataset links use markdown `[label](collection:id)`.
 
 In writings, `authors` in frontmatter are linked on the site automatically; use plain names in the description body instead of `[Author](people:id)`.
 
