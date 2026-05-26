@@ -91,12 +91,12 @@ Markdown descriptions use `[[wiki links]]`. Atlas does not resolve or validate t
 |--------|---------|
 | `[[bitcoin]]` | Glossary term `bitcoin` (default collection) |
 | `[[bit gold\|bitcoin]]` | Display text → glossary id |
-| `[[David Chaum\|people:david-chaum]]` | Display text → person id |
-| `[[Bitcoin whitepaper\|writings:bitcoin-whitepaper]]` | Display text → writing id |
+| `[Timothy C. May](people:timothy-c-may)` | Person profile (standard markdown link) |
+| `[Bitcoin whitepaper](writings:bitcoin-whitepaper)` | Writing in the writings dataset |
 
-Glossary-only links may omit the pipe (`[[bitcoin]]`). Cross-dataset links must keep the visible label on the left: `[[Wei Dai\|people:wei-dai]]`, not bare `[[people:wei-dai]]`.
+Use `[[…]]` only for glossary terms. Cross-dataset links use markdown form `[label](collection:id)` — the part after `:` is the collection name from `config.toml` (`people`, `books`, `writings`) and the item id.
 
-The prefix before `:` is the dataset collection name (`glossary`, `people`, `books`, `writings`), matching each repo’s `name` in `config.toml`. Without a prefix, links refer to the glossary.
+In writings, `authors` in frontmatter are linked on the site automatically; use plain names in the description body instead of `[Author](people:id)`.
 
 The `unresolved` command only checks glossary-to-glossary links within a single glossary dataset (legacy helper for authors).
 
