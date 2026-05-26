@@ -29,6 +29,14 @@ heterarchy-atlas <command>
 | `translate [lang] [id]` | Translate missing/stale entries via Codex CLI |
 | `resolve-authors` | Resolve GitHub usernames from git emails |
 
+From the atlas repo root, push all dataset submodules and then this repo to Radicle:
+
+```sh
+npm run push-rad
+```
+
+Uses each repo’s `rad` remote and branch `main` (override with `RAD_REMOTE` / `RAD_BRANCH`). Datasets are pushed first, then atlas (so submodule pointers on `main` stay in sync).
+
 ## Configuration
 
 Each dataset repo needs a `config.toml`. A single collection:

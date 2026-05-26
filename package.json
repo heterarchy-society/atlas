@@ -6,6 +6,9 @@
   "bin": {
     "heterarchy-atlas": "./bin/atlas.js"
   },
+  "scripts": {
+    "push-rad": "node scripts/push-rad-datasets.js"
+  },
   "dependencies": {
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
