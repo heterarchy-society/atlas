@@ -150,6 +150,7 @@ heterarchy-atlas translate cs tor # translate a single term non-interactively
 - [`datasets/books`](datasets/books) — book recommendations
 - [`datasets/writings`](datasets/writings) — primary source texts
 - [`datasets/people`](datasets/people) — people and contributors referenced by the project
+- [`datasets/talks`](datasets/talks) — conference talks and community videos
 
 ## Adding a new dataset
 
