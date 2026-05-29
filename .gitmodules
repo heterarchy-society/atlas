@@ -13,3 +13,6 @@
 [submodule "datasets/talks"]
 	path = datasets/talks
 	url = ssh://git@git.heterarchy.fyi:222/heterarchy-society/talks.git
+[submodule "datasets/events"]
+	path = datasets/events
+	url = ssh://git@git.heterarchy.fyi:222/heterarchy-society/events.git
