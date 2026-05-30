@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url'
 import { execSync } from 'node:child_process'
 
 const ATLAS_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const DEFAULT_DATASETS = ['glossary', 'people', 'books', 'writings', 'talks']
+const DEFAULT_DATASETS = ['glossary', 'people', 'books', 'writings', 'talks', 'events']
 
 function datasetPaths() {
   const gitmodules = join(ATLAS_ROOT, '.gitmodules')

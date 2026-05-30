@@ -72,6 +72,8 @@ dist/
   index.json    # all collections merged
 ```
 
+`meta.config` contains public `config.toml` sections (e.g. `[glossary]`, `[languages]`). Build-internal settings (`schema`, `source_dir`, `translation` prompts, etc.) are omitted.
+
 If `git_history = true`, a `dist/<output_key>-history.json` is also written with per-item commit history.
 
 ### Redirects
