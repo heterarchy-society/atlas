@@ -60,6 +60,11 @@ switch (command) {
     importTranscript()
     break
   }
+  case 'optimize-images': {
+    const { optimizeImages } = await import(`${LIB}/optimize-images.js`)
+    await optimizeImages()
+    break
+  }
   default:
     console.log(`Atlas — build tooling for Heterarchy data collections
 
@@ -79,6 +84,7 @@ Commands:
   peaks <id>              Generate waveform peaks for a writing's audio
   transcript <id> <file>  Import AssemblyAI or ElevenLabs word timestamps from JSON file
   transcribe <id> <file>  Alias for transcript
+  optimize-images [id]    Convert index-referenced images to WebP (quality 80)
 `)
     if (command && command !== '--help' && command !== '-h' && command !== 'help') {
       console.error(`Unknown command: ${command}`)

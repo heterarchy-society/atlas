@@ -68,8 +68,9 @@ dir = "dist"   # default
 
 ```
 dist/
-  terms.js      # export default { meta, terms: [...] }
-  index.json    # all collections merged
+  terms.js           # export default { meta, terms: [...] }
+  index.json         # all collections merged
+  bundle.tar.zst     # zstd-compressed tar of everything above (written last)
 ```
 
 `meta.config` contains public `config.toml` sections (e.g. `[glossary]`, `[languages]`). Build-internal settings (`schema`, `source_dir`, `translation` prompts, etc.) are omitted.
